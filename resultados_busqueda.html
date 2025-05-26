@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Resultados de la Búsqueda{% endblock %}
+
+{% block content %}
+    <h2>Resultados de la Búsqueda para: {{ query }}</h2>
+    {% if resultados %}
+        <ul>
+            {% for post in resultados %}
+                <li><a href="#">{{ post.titulo }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron resultados.</p>
+    {% endif %}
+    <a href="/">Volver al inicio</a>
+{% endblock %}
